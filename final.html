@@ -5,17 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Félicitations !</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        function checkName() {
+            var userInput = document.getElementById('nameInput').value.trim().toLowerCase();
+            var correctName = 'alex'; // Le prénom à deviner (en minuscule)
+
+            if (userInput === correctName) {
+                document.getElementById('message').innerHTML = "<b>Félicitations !</b> Vous avez trouvé ShadowFox : Alex 'Shadow' Martin. Vous avez empêché son projet ! 🎉";
+                document.getElementById('nameInput').disabled = true; // Désactiver le champ après la soumission correcte
+                document.getElementById('submitBtn').disabled = true; // Désactiver le bouton de soumission
+            } else {
+                document.getElementById('message').innerHTML = "<b>Erreur</b> : Le prénom est incorrect, essayez encore.";
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="container">
         <h1>Félicitations !</h1>
-        <p>Vous avez trouvé ShadowFox parmi les profils suivants :</p>
+        <p>Vous avez suivi mes traces jusqu’ici, mais me découvrir entièrement nécessite un dernier effort.
+            Mon prénom est caché dans ces indices, saurez-vous le deviner ?</p>
         <ul>
-            <li>Alex "Shadow" Martin</li>
-            <li>John Doe</li>
-            <li>Jane Fox</li>
+            <li>22 avril est une date qui m'est chère, mais elle révèle aussi une partie de mon identité.</li>
         </ul>
-        <p><b>Bravo :</b> Vous avez empêché son projet. 🎉</p>
+        
+        <!-- Formulaire pour entrer le prénom -->
+        <label for="nameInput">Entrez le prénom de ShadowFox :</label>
+        <input type="text" id="nameInput" placeholder="Entrez un prénom">
+        <button id="submitBtn" onclick="checkName()">Soumettre</button>
+
+        <p id="message"></p> <!-- Zone pour afficher le message de fin ou d'erreur -->
+        
     </div>
     <footer>Créé pour la Quête de ShadowFox</footer>
 </body>
