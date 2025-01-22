@@ -8,10 +8,10 @@
     <script>
         function checkName() {
             var userInput = document.getElementById('nameInput').value.trim().toLowerCase();
-            var correctName = 'alex'; // Le prénom à deviner (en minuscule)
+            var correctName = 'alexandre'; // Le prénom à deviner (en minuscule)
 
             if (userInput === correctName) {
-                document.getElementById('message').innerHTML = "<b>Félicitations !</b> Vous avez trouvé ShadowFox : Alex Martin. Vous avez empêché son projet ! 🎉";
+                document.getElementById('message').innerHTML = "<b>Félicitations !</b> Vous avez trouvé ShadowFox : Alexandre 'Shadow' Martin. Vous avez empêché son projet ! 🎉";
                 document.getElementById('nameInput').disabled = true; // Désactiver le champ après la soumission correcte
                 document.getElementById('submitBtn').disabled = true; // Désactiver le bouton de soumission
             } else {
