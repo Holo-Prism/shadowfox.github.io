@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Défi de ShadowFox</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function checkAddress() {
+            var userInput = document.getElementById('addressInput').value.trim().toLowerCase();
+            var requiredWord = 'gerland'; // Mot clé requis dans l'adresse
+
+            if (userInput.includes(requiredWord)) {
+                document.getElementById('message').innerHTML = 
+                    "<blockquote><b>Bravo !</b> Vous avez trouvé l’adresse correcte. Préparez-vous pour la prochaine étape : 192.168.1.50</blockquote>";
+                document.getElementById('addressInput').disabled = true; // Désactiver le champ après succès
+                document.getElementById('submitBtn').disabled = true; // Désactiver le bouton après succès
+            } else {
+                document.getElementById('message').innerHTML = 
+                    "<b>Erreur</b> : L’adresse doit inclure le mot 'gerland'. Essayez encore.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Défi de ShadowFox</h1>
+        <p>Vous êtes tout près, mais pour valider cette étape, il faut trouver une adresse contenant un mot-clé spécifique.  
+           Indice : "C'est un lieu bien connu des amateurs de football et de Lyon."</p>
+
+        <!-- Formulaire pour entrer une adresse -->
+        <label for="addressInput">Entrez une adresse contenant le mot-clé :</label>
+        <input type="text" id="addressInput" placeholder="Exemple : 350 avenue Jean Jaurès, Gerland">
+        <button id="submitBtn" onclick="checkAddress()">Soumettre</button>
+
+        <p id="message"></p> <!-- Zone pour afficher le message de succès ou d'erreur -->
+    </div>
+    <footer>Créé pour le défi de ShadowFox</footer>
+</body>
+</html>
