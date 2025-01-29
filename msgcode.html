@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Message Codé</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function checkAnswer() {
+            var userInput = document.getElementById('answerInput').value.trim().toLowerCase();
+            var correctAnswer = 'se cache ici'; 
+
+            if (userInput === correctAnswer) {
+                window.location.href = "page4.html"; // Redirige vers la page finale
+            } else {
+                document.getElementById('message').innerHTML = "<b>Erreur</b> : Mauvaise réponse.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Le Message Codé</h1>
+        <p>Ce message détient la clé, mais encore faut-il le comprendre.</p>
+
+        <blockquote>
+            "U2hBRE9XRk9YIFNFIE1BTlFVRVJF"
+        </blockquote>
+
+        <!-- Formulaire pour entrer la réponse -->
+        <label for="answerInput">Déchiffrez et entrez la réponse :</label>
+        <input type="text" id="answerInput" placeholder="Votre réponse">
+        <button onclick="checkAnswer()">Valider</button>
+
+        <p id="message"></p>
+    </div>
+    <footer>Créé pour la Quête de ShadowFox</footer>
+</body>
+</html>
