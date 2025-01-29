@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L’Archive Perdue</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function checkPassword() {
+            var userInput = document.getElementById('passwordInput').value.trim();
+            var correctPassword = '2204'; 
+
+            if (userInput === correctPassword) {
+                window.location.href = "page3.html"; // Redirige vers la page suivante
+            } else {
+                document.getElementById('message').innerHTML = "<b>Erreur</b> : Mot de passe incorrect.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>L’Archive Perdue</h1>
+        <p>Tu as su lire entre les lignes… mais ce n'est que le début.</p>
+        <p>Le chiffre qui a marqué mon destin est caché ici.</p>
+
+        <!-- Formulaire de mot de passe -->
+        <label for="passwordInput">Entre le mot de passe :</label>
+        <input type="text" id="passwordInput" placeholder="Mot de passe">
+        <button onclick="checkPassword()">Valider</button>
+
+        <p id="message"></p>
+    </div>
+    <footer>Créé pour la Quête de ShadowFox</footer>
+</body>
+</html>
