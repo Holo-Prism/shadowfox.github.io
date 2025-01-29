@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L’Ultime Défi</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function checkAnswers() {
+            var answer1 = document.getElementById('answer1').value.trim().toLowerCase();
+            var answer2 = document.getElementById('answer2').value.trim().toLowerCase();
+            var answer3 = document.getElementById('answer3').value.trim().toLowerCase();
+            var finalAnswer = document.getElementById('finalAnswer').value.trim().toLowerCase();
+
+            var correctAnswer1 = '24';
+            var correctAnswer2 = 'renard';
+            var correctAnswer3 = 'ombre';
+            var correctFinalAnswer = 'shadowfox';
+
+            if (answer1 === correctAnswer1 && answer2 === correctAnswer2 && answer3 === correctAnswer3 && finalAnswer === correctFinalAnswer) {
+                document.getElementById('message').innerHTML = "<b>Bravo !</b> Tu as relevé l’ultime défi et percé le secret de ShadowFox.";
+                document.getElementById('submitBtn').disabled = true;
+            } else {
+                document.getElementById('message').innerHTML = "<b>Erreur</b> : Au moins une réponse est incorrecte, réessaye.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>L’Ultime Défi</h1>
+        <p>Trois énigmes, une seule vérité. Trouve les réponses et assemble-les pour découvrir mon véritable nom.</p>
+
+        <h3>Énigme 1 : Le Nombre Caché</h3>
+        <p>Si tu additionnes les chiffres du jour et du mois de ma date importante, tu obtiens ?</p>
+        <input type="text" id="answer1" placeholder="Réponse en nombre">
+
+        <h3>Énigme 2 : L'Animal Mystérieux</h3>
+        <p>Je suis rusé, rapide et souvent associé au secret. Qui suis-je ?</p>
+        <input type="text" id="answer2" placeholder="Un seul mot">
+
+        <h3>Énigme 3 : L’Absence de Lumière</h3>
+        <p>Je suis intangible, je suis partout et sans moi, la lumière n’a aucun sens. Que suis-je ?</p>
+        <input type="text" id="answer3" placeholder="Un seul mot">
+
+        <h3>Le Mot Final</h3>
+        <p>Assemble les trois réponses et révèle mon identité.</p>
+        <input type="text" id="finalAnswer" placeholder="Mot final">
+        
+        <button id="submitBtn" onclick="checkAnswers()">Valider</button>
+
+        <p id="message"></p>
+    </div>
+    <footer>Créé pour la Quête de ShadowFox</footer>
+</body>
+</html>
